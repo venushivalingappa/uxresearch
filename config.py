@@ -10,14 +10,14 @@ FIGMA_SCRIPTS_DIR = OUTPUT_DIR / "figma_scripts"
 MODEL = "claude-sonnet-4-6"
 
 STAGE_TOKEN_BUDGETS = {
-    "ux_laws":            2048,
-    "proto_persona":      3000,
-    "design_thinking":    3000,
-    "research_synthesis": 3000,
-    "journey_map":        3500,
-    "design_rationale":   3000,
-    "design_system":      3500,
-    "wireframes":         6000,
+    "ux_laws":            4096,
+    "proto_persona":      4096,
+    "design_thinking":    4096,
+    "research_synthesis": 4096,
+    "journey_map":        4096,
+    "design_rationale":   4096,
+    "design_system":      5000,
+    "wireframes":         8000,
 }
 
 STAGE_ORDER = [
