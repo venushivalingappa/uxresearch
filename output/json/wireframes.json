@@ -1,0 +1,633 @@
+{
+  "screens": [
+    {
+      "screen_name": "Welcome Splash",
+      "purpose": "Brand introduction and value proposition display",
+      "journey_stage": "Download & Initial Launch",
+      "layout_type": "single-column",
+      "regions": [
+        {
+          "region_name": "content",
+          "height_px": 812,
+          "background": "dark",
+          "contents": [
+            {
+              "element": "StaticLogoSplash",
+              "label": "FinApp",
+              "width": "full",
+              "height": "120px",
+              "style": "text-only",
+              "position": "top"
+            },
+            {
+              "element": "spacer",
+              "label": "",
+              "width": "full",
+              "height": "40px",
+              "style": "text-only",
+              "position": "top"
+            },
+            {
+              "element": "ValuePropositionCard",
+              "label": "Invest smarter, grow faster",
+              "width": "full",
+              "height": "220px",
+              "style": "filled",
+              "position": "center"
+            },
+            {
+              "element": "TrustBadge",
+              "label": "256-bit encrypted · FCA regulated",
+              "width": "full",
+              "height": "40px",
+              "style": "text-only",
+              "position": "center"
+            },
+            {
+              "element": "spacer",
+              "label": "",
+              "width": "full",
+              "height": "48px",
+              "style": "text-only",
+              "position": "center"
+            },
+            {
+              "element": "PrimaryActionButton",
+              "label": "Get Started",
+              "width": "full",
+              "height": "52px",
+              "style": "filled",
+              "position": "bottom"
+            },
+            {
+              "element": "text",
+              "label": "Already have an account? Sign in",
+              "width": "full",
+              "height": "auto",
+              "style": "text-only",
+              "position": "bottom"
+            }
+          ]
+        }
+      ],
+      "components_used": [
+        "StaticLogoSplash",
+        "ValuePropositionCard",
+        "TrustBadge",
+        "PrimaryActionButton"
+      ],
+      "interactions": [
+        {
+          "trigger": "Get Started button",
+          "action": "navigate",
+          "destination": "Account Creation"
+        }
+      ],
+      "annotations": [
+        "Auto-advance to Account Creation after 0.5s if returning user token found"
+      ],
+      "wireframe_description": "Dark full-screen layout with centered logo and value prop card. Trust badge and CTA anchored near bottom."
+    },
+    {
+      "screen_name": "Account Creation",
+      "purpose": "Collect basic user credentials to create account",
+      "journey_stage": "Account Creation & Identity Verification",
+      "layout_type": "form",
+      "regions": [
+        {
+          "region_name": "nav-header",
+          "height_px": 56,
+          "background": "white",
+          "contents": [
+            {
+              "element": "BackNavigationHeader",
+              "label": "Create Account",
+              "width": "full",
+              "height": "56px",
+              "style": "text-only",
+              "position": "top"
+            }
+          ]
+        },
+        {
+          "region_name": "content",
+          "height_px": 700,
+          "background": "white",
+          "contents": [
+            {
+              "element": "ChunkedStepIndicator",
+              "label": "Step 1 of 3",
+              "width": "full",
+              "height": "32px",
+              "style": "filled",
+              "position": "top"
+            },
+            {
+              "element": "text",
+              "label": "Your basic details",
+              "width": "full",
+              "height": "auto",
+              "style": "text-only",
+              "position": "top"
+            },
+            {
+              "element": "TrustAnchoredFieldGroup",
+              "label": "Personal Info",
+              "width": "full",
+              "height": "auto",
+              "style": "outlined",
+              "position": "top"
+            },
+            {
+              "element": "InlineValidatedInput",
+              "label": "Full name",
+              "width": "full",
+              "height": "56px",
+              "style": "outlined",
+              "position": "top"
+            },
+            {
+              "element": "InlineValidatedInput",
+              "label": "Email address",
+              "width": "full",
+              "height": "56px",
+              "style": "outlined",
+              "position": "top"
+            },
+            {
+              "element": "InlineValidatedInput",
+              "label": "Password",
+              "width": "full",
+              "height": "56px",
+              "style": "outlined",
+              "position": "top"
+            },
+            {
+              "element": "InlineFieldError",
+              "label": "Password must be 8+ chars",
+              "width": "full",
+              "height": "auto",
+              "style": "text-only",
+              "position": "top"
+            },
+            {
+              "element": "TrustBadge",
+              "label": "Your data is encrypted",
+              "width": "full",
+              "height": "36px",
+              "style": "outlined",
+              "position": "center"
+            },
+            {
+              "element": "PrimaryActionButton",
+              "label": "Continue",
+              "width": "full",
+              "height": "52px",
+              "style": "filled",
+              "position": "bottom"
+            }
+          ]
+        }
+      ],
+      "components_used": [
+        "BackNavigationHeader",
+        "ChunkedStepIndicator",
+        "TrustAnchoredFieldGroup",
+        "InlineValidatedInput",
+        "InlineFieldError",
+        "TrustBadge",
+        "PrimaryActionButton"
+      ],
+      "interactions": [
+        {
+          "trigger": "Continue button",
+          "action": "navigate",
+          "destination": "Profile Setup"
+        },
+        {
+          "trigger": "Back arrow",
+          "action": "navigate",
+          "destination": "Welcome Splash"
+        }
+      ],
+      "annotations": [
+        "Inline validation fires on blur, not on submit"
+      ],
+      "wireframe_description": "White form screen with step indicator at top. Three validated inputs stacked with trust badge above sticky CTA."
+    },
+    {
+      "screen_name": "Profile Setup",
+      "purpose": "Collect financial profile and preferences",
+      "journey_stage": "Onboarding Flow & Profile Setup",
+      "layout_type": "form",
+      "regions": [
+        {
+          "region_name": "nav-header",
+          "height_px": 56,
+          "background": "white",
+          "contents": [
+            {
+              "element": "BackNavigationHeader",
+              "label": "Your Profile",
+              "width": "full",
+              "height": "56px",
+              "style": "text-only",
+              "position": "top"
+            }
+          ]
+        },
+        {
+          "region_name": "content",
+          "height_px": 700,
+          "background": "light-gray",
+          "contents": [
+            {
+              "element": "ChunkedStepIndicator",
+              "label": "Step 2 of 3",
+              "width": "full",
+              "height": "32px",
+              "style": "filled",
+              "position": "top"
+            },
+            {
+              "element": "ChunkedFormScreen",
+              "label": "Financial goals",
+              "width": "full",
+              "height": "auto",
+              "style": "filled",
+              "position": "top"
+            },
+            {
+              "element": "InlineValidatedInput",
+              "label": "Date of birth",
+              "width": "full",
+              "height": "56px",
+              "style": "outlined",
+              "position": "top"
+            },
+            {
+              "element": "InlineValidatedInput",
+              "label": "Annual income range",
+              "width": "full",
+              "height": "56px",
+              "style": "outlined",
+              "position": "top"
+            },
+            {
+              "element": "SectionDivider",
+              "label": "Investment preferences",
+              "width": "full",
+              "height": "32px",
+              "style": "text-only",
+              "position": "center"
+            },
+            {
+              "element": "rectangle",
+              "label": "Risk tolerance selector (Low/Med/High)",
+              "width": "full",
+              "height": "80px",
+              "style": "outlined",
+              "position": "center"
+            },
+            {
+              "element": "SimulatedDataDisclaimer",
+              "label": "Preview uses simulated data only",
+              "width": "full",
+              "height": "36px",
+              "style": "text-only",
+              "position": "center"
+            },
+            {
+              "element": "SimulatedPortfolioCard",
+              "label": "Estimated portfolio preview",
+              "width": "full",
+              "height": "140px",
+              "style": "filled",
+              "position": "center"
+            },
+            {
+              "element": "PrimaryActionButton",
+              "label": "Continue",
+              "width": "full",
+              "height": "52px",
+              "style": "filled",
+              "position": "bottom"
+            }
+          ]
+        }
+      ],
+      "components_used": [
+        "BackNavigationHeader",
+        "ChunkedStepIndicator",
+        "ChunkedFormScreen",
+        "InlineValidatedInput",
+        "SectionDivider",
+        "SimulatedDataDisclaimer",
+        "SimulatedPortfolioCard",
+        "PrimaryActionButton"
+      ],
+      "interactions": [
+        {
+          "trigger": "Continue button",
+          "action": "navigate",
+          "destination": "Dashboard Preview"
+        },
+        {
+          "trigger": "Back arrow",
+          "action": "navigate",
+          "destination": "Account Creation"
+        }
+      ],
+      "annotations": [
+        "Simulated portfolio card updates live as risk tolerance changes"
+      ],
+      "wireframe_description": "Light-gray scrollable form with chunked sections. Simulated portfolio card previews outcome before KYC."
+    },
+    {
+      "screen_name": "Dashboard Preview",
+      "purpose": "Show app value before KYC with deferred prompt",
+      "journey_stage": "First Use & Feature Exploration",
+      "layout_type": "tab-bar",
+      "regions": [
+        {
+          "region_name": "nav-header",
+          "height_px": 56,
+          "background": "white",
+          "contents": [
+            {
+              "element": "text",
+              "label": "Good morning, Alex 👋",
+              "width": "full",
+              "height": "auto",
+              "style": "text-only",
+              "position": "top"
+            }
+          ]
+        },
+        {
+          "region_name": "content",
+          "height_px": 640,
+          "background": "light-gray",
+          "contents": [
+            {
+              "element": "ContextualKYCPromptBanner",
+              "label": "Verify identity to unlock full access",
+              "width": "full",
+              "height": "56px",
+              "style": "filled",
+              "position": "top"
+            },
+            {
+              "element": "SkeletonScreen",
+              "label": "Loading portfolio...",
+              "width": "full",
+              "height": "160px",
+              "style": "filled",
+              "position": "top"
+            },
+            {
+              "element": "SimulatedPortfolioCard",
+              "label": "Simulated balance $12,400",
+              "width": "full",
+              "height": "140px",
+              "style": "filled",
+              "position": "center"
+            },
+            {
+              "element": "SimulatedDataDisclaimer",
+              "label": "All figures are simulated",
+              "width": "full",
+              "height": "auto",
+              "style": "text-only",
+              "position": "center"
+            },
+            {
+              "element": "SectionDivider",
+              "label": "Quick actions",
+              "width": "full",
+              "height": "32px",
+              "style": "text-only",
+              "position": "center"
+            },
+            {
+              "element": "rectangle",
+              "label": "Invest / Transfer / History",
+              "width": "full",
+              "height": "72px",
+              "style": "outlined",
+              "position": "center"
+            },
+            {
+              "element": "MilestoneToast",
+              "label": "Profile complete! 🎉",
+              "width": "full",
+              "height": "48px",
+              "style": "filled",
+              "position": "bottom"
+            }
+          ]
+        },
+        {
+          "region_name": "tab-bar",
+          "height_px": 56,
+          "background": "white",
+          "contents": [
+            {
+              "element": "ProgressiveTabBar",
+              "label": "Home · Invest · Portfolio · Account",
+              "width": "full",
+              "height": "56px",
+              "style": "filled",
+              "position": "bottom"
+            }
+          ]
+        }
+      ],
+      "components_used": [
+        "ContextualKYCPromptBanner",
+        "SkeletonScreen",
+        "SimulatedPortfolioCard",
+        "SimulatedDataDisclaimer",
+        "SectionDivider",
+        "MilestoneToast",
+        "ProgressiveTabBar"
+      ],
+      "interactions": [
+        {
+          "trigger": "KYC banner tap",
+          "action": "navigate",
+          "destination": "KYC Verification"
+        },
+        {
+          "trigger": "MilestoneToast",
+          "action": "auto-dismiss",
+          "destination": "Dashboard Preview"
+        }
+      ],
+      "annotations": [
+        "Milestone toast auto-dismisses after 3 seconds"
+      ],
+      "wireframe_description": "Full dashboard with simulated data and sticky KYC banner. Tab bar unlocks progressively post-verification."
+    },
+    {
+      "screen_name": "KYC Verification",
+      "purpose": "Collect identity documents to complete KYC",
+      "journey_stage": "KYC Completion (Deferred Return)",
+      "layout_type": "form",
+      "regions": [
+        {
+          "region_name": "nav-header",
+          "height_px": 56,
+          "background": "white",
+          "contents": [
+            {
+              "element": "BackNavigationHeader",
+              "label": "Verify Identity",
+              "width": "full",
+              "height": "56px",
+              "style": "text-only",
+              "position": "top"
+            }
+          ]
+        },
+        {
+          "region_name": "content",
+          "height_px": 700,
+          "background": "white",
+          "contents": [
+            {
+              "element": "ChunkedStepIndicator",
+              "label": "Step 3 of 3",
+              "width": "full",
+              "height": "32px",
+              "style": "filled",
+              "position": "top"
+            },
+            {
+              "element": "text",
+              "label": "Upload a government-issued ID",
+              "width": "full",
+              "height": "auto",
+              "style": "text-only",
+              "position": "top"
+            },
+            {
+              "element": "TrustAnchoredFieldGroup",
+              "label": "Identity documents",
+              "width": "full",
+              "height": "auto",
+              "style": "outlined",
+              "position": "top"
+            },
+            {
+              "element": "DocumentUploadField",
+              "label": "Front of ID",
+              "width": "full",
+              "height": "120px",
+              "style": "outlined",
+              "position": "top"
+            },
+            {
+              "element": "DocumentUploadField",
+              "label": "Back of ID",
+              "width": "full",
+              "height": "120px",
+              "style": "outlined",
+              "position": "top"
+            },
+            {
+              "element": "DocumentUploadField",
+              "label": "Selfie with ID",
+              "width": "full",
+              "height": "120px",
+              "style": "outlined",
+              "position": "center"
+            },
+            {
+              "element": "TrustBadge",
+              "label": "Data never sold · AES-256 secured",
+              "width": "full",
+              "height": "36px",
+              "style": "outlined",
+              "position": "center"
+            },
+            {
+              "element": "BottomSheetModal",
+              "label": "Why we need this info",
+              "width": "full",
+              "height": "auto",
+              "style": "text-only",
+              "position": "center"
+            },
+            {
+              "element": "PrimaryActionButton",
+              "label": "Submit for Review",
+              "width": "full",
+              "height": "52px",
+              "style": "filled",
+              "position": "bottom"
+            }
+          ]
+        }
+      ],
+      "components_used": [
+        "BackNavigationHeader",
+        "ChunkedStepIndicator",
+        "TrustAnchoredFieldGroup",
+        "DocumentUploadField",
+        "TrustBadge",
+        "BottomSheetModal",
+        "PrimaryActionButton",
+        "SafeAreaPageWrapper"
+      ],
+      "interactions": [
+        {
+          "trigger": "Submit for Review",
+          "action": "navigate",
+          "destination": "Dashboard Preview"
+        },
+        {
+          "trigger": "Why we need this",
+          "action": "expand",
+          "destination": "BottomSheetModal"
+        },
+        {
+          "trigger": "Back arrow",
+          "action": "navigate",
+          "destination": "Dashboard Preview"
+        }
+      ],
+      "annotations": [
+        "Submit triggers async review; user returns to dashboard immediately"
+      ],
+      "wireframe_description": "Three stacked document upload fields with trust anchors. Sticky CTA submits async and returns to dashboard."
+    }
+  ],
+  "flow_connections": [
+    {
+      "from_screen": "Welcome Splash",
+      "to_screen": "Account Creation",
+      "trigger": "tap Get Started"
+    },
+    {
+      "from_screen": "Account Creation",
+      "to_screen": "Profile Setup",
+      "trigger": "tap Continue"
+    },
+    {
+      "from_screen": "Profile Setup",
+      "to_screen": "Dashboard Preview",
+      "trigger": "tap Continue"
+    },
+    {
+      "from_screen": "Dashboard Preview",
+      "to_screen": "KYC Verification",
+      "trigger": "tap KYC banner"
+    },
+    {
+      "from_screen": "KYC Verification",
+      "to_screen": "Dashboard Preview",
+      "trigger": "tap Submit for Review"
+    }
+  ]
+}

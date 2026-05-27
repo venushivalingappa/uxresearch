@@ -2,9 +2,3 @@ __pycache__/
 *.pyc
 *.pyo
 .env
-output/json/*.json
-output/reports/*.md
-output/figma_scripts/*.js
-!output/json/.gitkeep
-!output/reports/.gitkeep
-!output/figma_scripts/.gitkeep

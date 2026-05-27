@@ -1,0 +1,212 @@
+{
+  "persona_used": "Marcus Chen",
+  "journey_stages": [
+    {
+      "stage_name": "Awareness & Discovery",
+      "touchpoints": [
+        "Twitter/X tech finance thread",
+        "App Store listing",
+        "App Store reviews and ratings"
+      ],
+      "user_actions": [
+        "Sees a recommendation for the app in a developer-focused finance thread",
+        "Reads the App Store description and scans feature highlights",
+        "Quickly checks ratings and skims a handful of reviews for red flags"
+      ],
+      "thoughts": "Looks promising — the feature set is exactly what I want. Let me just hope the onboarding isn't a 20-step nightmare like the last one I tried.",
+      "emotions": [
+        "curious",
+        "cautiously optimistic"
+      ],
+      "emotion_score": 1,
+      "pain_points": [
+        "App Store screenshots don't clearly show whether advanced investment features are accessible early",
+        "Reviews mention a lengthy verification process but don't specify whether it can be deferred"
+      ],
+      "opportunities": [
+        "How Might We apply Value-First Deferred Onboarding to let users explore core app features before completing KYC, reducing the perceived cost of starting the flow"
+      ]
+    },
+    {
+      "stage_name": "Download & Initial Launch",
+      "touchpoints": [
+        "App Store download",
+        "App splash screen",
+        "Initial permission prompts (biometrics, notifications)"
+      ],
+      "user_actions": [
+        "Downloads the app and launches it immediately",
+        "Taps through the splash screen and branding intro",
+        "Grants Face ID and notification permissions when prompted natively"
+      ],
+      "thoughts": "Good — it asked for Face ID right away using the native iOS prompt. That's a green flag. Let's see how bad the signup actually is.",
+      "emotions": [
+        "impatient",
+        "mildly relieved"
+      ],
+      "emotion_score": 0,
+      "pain_points": [
+        "Branding animation on the splash screen feels like wasted time before he can interact",
+        "Uncertainty about whether he can explore the app before committing to a full sign-up"
+      ],
+      "opportunities": [
+        "How Might We apply Value-First Deferred Onboarding to let users explore core app features before completing KYC, reducing the perceived cost of starting the flow",
+        "How Might We use auto-detection, native platform components, and smart defaults to reduce the number of manual inputs required across every onboarding stage"
+      ]
+    },
+    {
+      "stage_name": "Account Creation & Identity Verification",
+      "touchpoints": [
+        "Sign-up screen",
+        "Email/phone input field",
+        "OTP verification screen",
+        "KYC document upload prompt"
+      ],
+      "user_actions": [
+        "Selects 'Continue with Apple' to avoid manual data entry entirely",
+        "Confirms pre-filled name and email auto-populated from Apple ID",
+        "Receives and enters OTP which autofills from the iOS Messages app",
+        "Is prompted for KYC document upload and chooses to defer it to explore first"
+      ],
+      "thoughts": "The Apple Sign-In auto-filled everything — that saved me two minutes easily. But now it wants my government ID already? At least there's a 'do this later' option.",
+      "emotions": [
+        "efficient",
+        "mildly frustrated",
+        "relieved"
+      ],
+      "emotion_score": 1,
+      "pain_points": [
+        "KYC prompt appearing before any value has been demonstrated feels premature",
+        "No clear explanation of what features are locked versus accessible without completing KYC"
+      ],
+      "opportunities": [
+        "How Might We use auto-detection, native platform components, and smart defaults to reduce the number of manual inputs required across every onboarding stage",
+        "How Might We apply Value-First Deferred Onboarding to let users explore core app features before completing KYC, reducing the perceived cost of starting the flow",
+        "How Might We extend session persistence and OTP validity windows so users who need to retrieve physical documents are not penalised with forced restarts"
+      ]
+    },
+    {
+      "stage_name": "Onboarding Flow & Profile Setup",
+      "touchpoints": [
+        "Investor profile questionnaire",
+        "Risk tolerance screen",
+        "Optional preferences screens",
+        "Progress indicator"
+      ],
+      "user_actions": [
+        "Sees a 'Power User' or 'Skip optional steps' prompt and immediately activates it",
+        "Completes only the required risk profile questions — 3 instead of the full 8",
+        "Dismisses the tutorial overlay on the portfolio screen after a single tap",
+        "Skips the guided walkthrough since UI patterns are familiar from similar apps"
+      ],
+      "thoughts": "Finally — a flow that doesn't treat me like I've never used a phone before. Skipping those optional steps felt genuinely respectful of my time.",
+      "emotions": [
+        "satisfied",
+        "engaged",
+        "empowered"
+      ],
+      "emotion_score": 2,
+      "pain_points": [
+        "Risk tolerance questions still use industry jargon like 'volatility tolerance' without inline clarification",
+        "Progress indicator resets unexpectedly after skipping steps, causing brief confusion about completion state"
+      ],
+      "opportunities": [
+        "How Might We design a tiered onboarding flow that lets power users skip optional steps while surfacing progressive guidance only for users who signal they need it",
+        "How Might We replace all financial jargon at the point of input with plain-language inline tooltips that appear within 8px of the relevant field without cluttering the screen"
+      ]
+    },
+    {
+      "stage_name": "First Use & Feature Exploration",
+      "touchpoints": [
+        "Home dashboard",
+        "Investment discovery screen",
+        "Stock/ETF detail pages",
+        "Simulated portfolio tool"
+      ],
+      "user_actions": [
+        "Lands on the dashboard and immediately navigates to the investment catalogue",
+        "Searches for specific ETFs and browses performance charts",
+        "Adds instruments to a watchlist to test the core loop before funding",
+        "Attempts to place a simulated trade to understand the execution flow"
+      ],
+      "thoughts": "This is what I came for — the data is clean, the charts are responsive, and I haven't been interrupted by a single tutorial popup since I dismissed the first one.",
+      "emotions": [
+        "excited",
+        "focused",
+        "satisfied"
+      ],
+      "emotion_score": 2,
+      "pain_points": [
+        "Some premium analytics features are gated behind KYC completion with no preview or teaser available",
+        "No persistent shortcut to resume KYC when he naturally decides he's ready"
+      ],
+      "opportunities": [
+        "How Might We apply Value-First Deferred Onboarding to let users explore core app features before completing KYC, reducing the perceived cost of starting the flow",
+        "How Might We design a tiered onboarding flow that lets power users skip optional steps while surfacing progressive guidance only for users who signal they need it"
+      ]
+    },
+    {
+      "stage_name": "KYC Completion (Deferred Return)",
+      "touchpoints": [
+        "In-app KYC resume prompt",
+        "Document upload screen",
+        "Camera capture for ID",
+        "Selfie liveness check",
+        "Confirmation screen"
+      ],
+      "user_actions": [
+        "Taps the contextual banner prompting him to unlock full trading when he hits a feature gate",
+        "Resumes KYC from exactly where he left off — session was persisted",
+        "Uses phone camera to capture passport; document data is auto-extracted via OCR",
+        "Completes liveness selfie check and submits — receives instant provisional approval"
+      ],
+      "thoughts": "It remembered where I stopped and the OCR pulled my details straight from the passport photo — I barely had to type anything. This is how it should always work.",
+      "emotions": [
+        "impressed",
+        "confident",
+        "relieved"
+      ],
+      "emotion_score": 2,
+      "pain_points": [
+        "Liveness check fails on first attempt due to lighting, with an error message that isn't specific enough to be actionable",
+        "Provisional approval state is unclear — he's unsure which features are now unlocked versus pending full review"
+      ],
+      "opportunities": [
+        "How Might We extend session persistence and OTP validity windows so users who need to retrieve physical documents are not penalised with forced restarts",
+        "How Might We use auto-detection, native platform components, and smart defaults to reduce the number of manual inputs required across every onboarding stage"
+      ]
+    },
+    {
+      "stage_name": "Regular Use & Advocacy",
+      "touchpoints": [
+        "Daily app open via Face ID",
+        "Push notifications for portfolio events",
+        "Referral prompt",
+        "App Store review prompt"
+      ],
+      "user_actions": [
+        "Opens the app daily using Face ID with zero friction from day one",
+        "Shares the app with two colleagues after a positive conversation about his portfolio returns",
+        "Leaves a 5-star App Store review specifically praising the skip-step onboarding",
+        "Engages with advanced features like tax lot selection that were unlocked post-KYC"
+      ],
+      "thoughts": "I actually recommended this to someone — that's rare. The onboarding respected my intelligence and the core product delivered on the promise.",
+      "emotions": [
+        "loyal",
+        "proud",
+        "enthusiastic"
+      ],
+      "emotion_score": 2,
+      "pain_points": [
+        "Referral flow requires the referred friend to complete full onboarding before Marcus receives credit, making the incentive feel distant",
+        "Some advanced features introduced post-KYC have no contextual guidance, assuming discovery will happen organically"
+      ],
+      "opportunities": [
+        "How Might We design a tiered onboarding flow that lets power users skip optional steps while surfacing progressive guidance only for users who signal they need it"
+      ]
+    }
+  ],
+  "overall_arc": "Marcus begins cautiously optimistic, spikes in satisfaction when the onboarding respects his time and technical fluency, experiences a brief dip at premature KYC gates, then recovers to strong advocacy once the deferred verification flow proves seamless and the core product delivers real value.",
+  "moment_of_truth": "The appearance of the 'skip optional steps' prompt during the onboarding questionnaire — if this option is absent or buried, Marcus immediately categorises the app as low-quality and disengages; if it is prominent and functional, it earns his trust for the rest of the journey.",
+  "biggest_pain_point": "Being shown a KYC document upload requirement before experiencing any product value, with no clear indication of which features remain accessible if he defers — creating a perceived cost-before-benefit barrier that risks immediate drop-off."
+}

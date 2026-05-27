@@ -1,0 +1,115 @@
+{
+  "personas": [
+    {
+      "name": "Marcus Chen",
+      "age": 28,
+      "occupation": "Software Engineer",
+      "tech_comfort": 5,
+      "primary_goal": "Get through onboarding as fast as possible and start exploring investment features without unnecessary friction",
+      "frustrations": [
+        "Multi-step onboarding flows that ask for information he'll never use — he wants to skip optional steps",
+        "Apps that don't support biometric login or autofill from the start, forcing manual data entry",
+        "Being shown tutorials for things he already understands intuitively from using similar fintech apps"
+      ],
+      "motivations": [
+        "Reaching the actual dashboard quickly so he can evaluate whether the app is worth keeping",
+        "Trusting that the app is secure based on how polished and deliberate the setup process feels",
+        "Seeing advanced features like portfolio analytics teased during onboarding so he knows the depth is there"
+      ],
+      "quote": "I've onboarded into like six finance apps this year. If yours makes me tap through twelve screens before I see a single number, I'm already forming a bad opinion.",
+      "behavioral_traits": [
+        "Skips instructions and learns by doing, tapping aggressively to find functionality",
+        "Compares new apps against mental models from Robinhood, Revolut, and Coinbase — expects familiar patterns",
+        "Immediately checks app permissions and privacy settings before connecting any bank account"
+      ],
+      "relevant_ux_laws": [
+        {
+          "law_name": "Jakob's Law",
+          "relevance": "Marcus has deep experience with competing fintech apps and will expect onboarding conventions like progressive account setup and biometric prompts to match what he already knows — deviating from these patterns creates unnecessary cognitive load for him."
+        },
+        {
+          "law_name": "Progressive Disclosure",
+          "relevance": "Marcus is frustrated by upfront information overload; revealing advanced settings and optional configurations only after core setup respects his goal of reaching the dashboard fast while keeping power features accessible when he wants them."
+        },
+        {
+          "law_name": "Doherty Threshold",
+          "relevance": "Any loading screen or verification delay above 400ms during account creation will feel broken to Marcus, who expects near-instant feedback — slow transitions will signal poor engineering quality and reduce his trust in the app."
+        }
+      ]
+    },
+    {
+      "name": "Diane Kowalski",
+      "age": 43,
+      "occupation": "High School Art Teacher",
+      "tech_comfort": 3,
+      "primary_goal": "Set up a savings account and understand what the app can do for her retirement planning without feeling overwhelmed",
+      "frustrations": [
+        "Financial jargon like 'APY', 'FDIC-insured', or 'routing number' appearing without any explanation during setup",
+        "Being asked to make too many decisions at once — like choosing account types — before she understands the difference",
+        "Onboarding flows that look cluttered or untrustworthy, making her second-guess whether the app is legitimate"
+      ],
+      "motivations": [
+        "Feeling confident that her money is safe and that the app is backed by a real institution",
+        "Getting a clear sense of progress through setup so she knows how close she is to being done",
+        "Having the app feel welcoming and non-judgmental about her current savings situation"
+      ],
+      "quote": "I'm not bad with money, I just don't speak banker. If the app makes me feel stupid in the first five minutes, I'm deleting it and going back to my credit union's website.",
+      "behavioral_traits": [
+        "Reads every permission prompt carefully before accepting, often pausing to Google what it means",
+        "Relies heavily on visual design quality as a proxy for trustworthiness before reading any content",
+        "Prefers to complete one task fully before moving to the next rather than jumping between screens"
+      ],
+      "relevant_ux_laws": [
+        {
+          "law_name": "Hick's Law",
+          "relevance": "Diane is vulnerable to decision paralysis during onboarding — presenting too many account options or configuration choices simultaneously will slow her down and increase drop-off risk, making it critical to limit choices per screen to one or two clear options."
+        },
+        {
+          "law_name": "Aesthetic-Usability Effect",
+          "relevance": "Diane consciously uses visual polish as a trust signal for financial apps — a clean, calm design will make her perceive the onboarding as more intuitive and the app as more legitimate, even before she has evaluated any features."
+        },
+        {
+          "law_name": "Peak-End Rule",
+          "relevance": "Diane will judge the entire onboarding experience based on its most emotionally impactful moment and its final screen — a reassuring confirmation message with a warm welcome and clear next step will anchor her memory of setup as positive, regardless of minor friction along the way."
+        }
+      ]
+    },
+    {
+      "name": "Roy Tanner",
+      "age": 67,
+      "occupation": "Retired Postal Worker",
+      "tech_comfort": 2,
+      "primary_goal": "Successfully link his existing bank account to track his pension deposits and understand where his money is going each month",
+      "frustrations": [
+        "Small tap targets and dense form fields that are hard to interact with accurately on his phone",
+        "Being timed out of sessions mid-onboarding when he steps away to find his bank details from paper statements",
+        "Verification steps like SMS codes that expire quickly, requiring him to restart the whole process"
+      ],
+      "motivations": [
+        "Feeling like someone designed this app with him in mind, not just for young people",
+        "Having a family member — his daughter — recommend the app and be able to help him set it up remotely",
+        "Knowing exactly what he agreed to before submitting any personal or financial information"
+      ],
+      "quote": "My daughter set up my first smartphone. I can manage fine now, but when an app rushes me or hides things in small print, I just don't trust it with my bank account.",
+      "behavioral_traits": [
+        "Types slowly and carefully on mobile, frequently using the backspace key and double-checking entries",
+        "Prefers to read all available text on a screen before tapping anything — rarely skips copy",
+        "Will abandon an app entirely rather than call a support number, treating an unclear screen as a dead end"
+      ],
+      "relevant_ux_laws": [
+        {
+          "law_name": "Fitts' Law",
+          "relevance": "Roy's reduced fine motor precision on a touchscreen means that small or closely spaced tap targets — like inline form action buttons or tiny checkbox labels — will produce frequent errors, making generously sized, well-spaced interactive elements essential throughout his onboarding path."
+        },
+        {
+          "law_name": "Miller's Law",
+          "relevance": "Roy can comfortably hold only a small number of items in working memory at once, so chunking the onboarding into clearly labeled phases of no more than three to four steps per section will prevent cognitive overload and help him track where he is in the process."
+        },
+        {
+          "law_name": "Tesler's Law (Conservation of Complexity)",
+          "relevance": "The inherent complexity of KYC verification and bank linking cannot be eliminated — but the app must absorb as much of that complexity as possible through smart defaults, document scanning, and pre-filled fields so Roy is never asked to manually transfer information he cannot easily locate."
+        }
+      ]
+    }
+  ]
+}

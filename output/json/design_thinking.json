@@ -1,0 +1,94 @@
+{
+  "phases": [
+    {
+      "phase_name": "Empathize",
+      "key_questions": [
+        "When Roy Tanner steps away mid-onboarding to find his paper bank statement, what happens to his session — and how does that moment of abandonment feel to him?",
+        "When Diane Kowalski encounters the term 'APY' or is asked to choose between account types on screen two, what emotional response does that trigger before she has any context?",
+        "When Marcus Chen hits a mandatory field asking for information he considers irrelevant — like a physical mailing address before he's seen a single investment feature — how quickly does his tolerance expire?"
+      ],
+      "activities": [
+        "Conduct a contextual inquiry session where Roy Tanner attempts to link his bank account using only his paper statements as reference, observed in his home environment — recording every tap error, pause, and moment of session timeout anxiety",
+        "Run a think-aloud protocol with Diane Kowalski on a competitor fintech onboarding flow (e.g. Acorns or Betterment), asking her to narrate confusion at every jargon term or decision fork — cataloguing the specific words and UI moments that cause her to hesitate or want to quit",
+        "Diary study over 5 days with Marcus Chen installing 3 fintech apps back-to-back, logging time-to-first-feature, number of screens before value, and explicit moments where he considered abandoning — with annotations on what specifically broke his flow"
+      ],
+      "insights": "Roy Tanner's core emotional state during onboarding is one of precarious trust — he is willing to engage but a single timeout or form error threatens to permanently break his confidence in the product. His frustration with small tap targets and dense fields is not merely a usability complaint; it represents a fear of making irreversible mistakes with his financial data. Diane Kowalski enters onboarding with genuine curiosity about retirement planning but that curiosity collapses the moment she encounters unexplained jargon or is forced to make consequential account-type decisions without scaffolded understanding — her frustration is rooted in feeling intellectually excluded. Marcus Chen's frustration is the inverse: he is not excluded, he is over-included in steps designed for less experienced users, and every unnecessary screen reads to him as a product team that does not respect his time or technical capability. All three personas share an unmet need for control and legibility, but the definition of those terms is radically different for each of them.",
+      "outputs": [
+        "Empathy maps for Marcus Chen, Diane Kowalski, and Roy Tanner — each with four quadrants (Says, Thinks, Does, Feels) populated from observed and inferred data, with specific UI moments from competitor apps annotated in the 'Feels' quadrant",
+        "Friction timeline artefact: a journey map overlay showing the exact onboarding steps (screens 1–12 of a reference fintech app) with each persona's emotional valence plotted as a graph line — highlighting divergence points where Marcus accelerates, Diane plateaus, and Roy risks dropout"
+      ]
+    },
+    {
+      "phase_name": "Define",
+      "key_questions": [
+        "What is the single most dangerous assumption baked into a linear, one-size-fits-all onboarding flow — the assumption that all three personas need the same information in the same order?",
+        "How do we write a POV statement that captures Diane Kowalski's need without defaulting to the patronising solution of 'just simplify everything' — which would alienate Marcus Chen?",
+        "Where is the line between progressive disclosure (which helps Roy and Diane) and excessive gating (which frustrates Marcus) — and can a single onboarding architecture serve both?"
+      ],
+      "activities": [
+        "POV statement workshop: facilitator presents the three persona cards and their frustrations side-by-side; team writes competing POV statements for each persona, then stress-tests them by asking 'does solving this POV actively harm another persona?' — mapping tensions explicitly",
+        "Jobs-to-be-Done reframe exercise: for each persona, complete the sentence 'When I open this fintech app for the first time, I want to _____ so that I can feel _____' — then cluster the functional, emotional, and social jobs to find shared underlying needs beneath the surface-level differences",
+        "Define a 'minimum viable trust' framework: identify the irreducible set of data points the product legally and functionally requires at onboarding versus what is being collected for analytics or future features — used to challenge every mandatory field against Roy's and Marcus's frustrations"
+      ],
+      "insights": "The defining tension in this problem is not between simplicity and power — it is between legibility and velocity. Diane Kowalski needs time, context, and plain language to build enough understanding to trust the product with her retirement savings; Roy Tanner needs large, forgiving interaction targets and a session model that accommodates his real-world behaviour of stepping away; Marcus Chen needs the product to get out of his way and trust that he already knows what he's doing. A single POV cannot serve all three without a branching or adaptive architecture. The most precise POV for this sprint is: Diane Kowalski, a high school art teacher planning for retirement, needs onboarding that teaches while it collects — because encountering financial jargon or forced account-type decisions before she has context causes her to feel intellectually excluded from her own financial future, making her likely to abandon before she reaches the features that would genuinely help her.",
+      "outputs": [
+        "Three POV statements (one per persona) formatted as 'User [name] needs [need] because [insight]' — with a conflict matrix showing where solving one POV creates friction for another, used to scope the sprint's primary design target",
+        "HMW (How Might We) question bank of 15 questions derived from the POV statements — including: 'HMW let Marcus skip optional steps without making Diane feel she's missing something important?', 'HMW preserve Roy's onboarding session state so a 20-minute interruption doesn't force him to restart?', 'HMW introduce the term APY to Diane in a way that feels like a revelation rather than a test?'"
+      ]
+    },
+    {
+      "phase_name": "Ideate",
+      "key_questions": [
+        "What if onboarding did not begin with data collection at all — what if it began with demonstrating value, and only asked for information at the moment that information unlocked a specific feature the user had just expressed interest in?",
+        "How might we design a session persistence model so radical that Roy Tanner could start onboarding on Monday, leave his phone on the kitchen counter, and resume without penalty on Wednesday?",
+        "What is the most incremental change — a single screen modification — that would most immediately reduce Diane Kowalski's jargon-induced anxiety without requiring a full architecture rebuild?"
+      ],
+      "activities": [
+        "Worst possible idea warm-up: team generates the most hostile onboarding flow imaginable for Roy Tanner — 47 mandatory steps, 6-point font, 90-second timeout, no autofill — then inverts each element to generate genuine design ideas that directly address his stated frustrations",
+        "Crazy 8s sketch sprint (8 minutes, 8 frames per participant) focused on the single screen where Diane Kowalski must choose an account type — each sketch must include a mechanism that gives her enough context to choose confidently without adding more than one additional tap or read",
+        "Assumption reversal: take the core assumption 'onboarding must be completed before the user accesses the app' and reverse it to 'the user accesses the app first and onboarding completes itself in the background over the first 7 days as the user takes natural actions'"
+      ],
+      "insights": "Three divergent ideas emerged as the most generative. The radical idea is a Value-First Deferred Onboarding model: Marcus Chen, Diane Kowalski, and Roy Tanner all enter the app with a single biometric or email step, immediately see a read-only personalised dashboard populated with illustrative data, and are only asked for real information at the moment a specific action requires it — linking a bank account surfaces only when Roy taps 'track my deposits', and account-type selection surfaces for Diane only after a 60-second interactive explainer she triggers by choice. The incremental idea is a Contextual Glossary Tooltip system: every piece of jargon in Diane's onboarding flow (APY, FDIC, routing number) is underlined in a distinct colour and expands inline to a plain-English two-sentence explanation without navigating away from the current step — zero additional screens, zero friction for Marcus who will never tap them. The reframe idea is a Persistent Session Envelope for Roy: the app treats onboarding as a multi-day asynchronous object — storing partial state to the device with no timeout penalty, sending a gentle push notification after 24 hours of inactivity reading 'Welcome back, Roy — you were right in the middle of linking your bank account. Your progress is saved.' These three ideas can coexist in a single architecture.",
+      "outputs": [
+        "Sketched concept board containing 24 Crazy 8s frames across 3 participants for the account-type selection screen, annotated with which persona each design decision primarily serves",
+        "Idea prioritisation matrix scoring all generated concepts against four axes: impact on Marcus's velocity, impact on Diane's comprehension, impact on Roy's session continuity, and engineering feasibility — with the top 5 ideas circled for prototyping consideration"
+      ]
+    },
+    {
+      "phase_name": "Prototype",
+      "key_questions": [
+        "What is the single core assumption that, if wrong, would invalidate the Value-First Deferred Onboarding concept — and what is the cheapest possible artefact that tests only that assumption?",
+        "Can a paper prototype with handwritten tooltip cards adequately simulate the Contextual Glossary Tooltip experience for Diane Kowalski, or does the interaction fidelity need to be higher to surface her real behaviour?",
+        "How do we prototype the Persistent Session Envelope for Roy Tanner without building any backend — and can a Wizard of Oz technique (a researcher manually 'resuming' his session) produce valid signal?"
+      ],
+      "activities": [
+        "Build a 7-screen paper prototype of the Value-First Deferred Onboarding flow using printed phone-frame templates and hand-drawn UI — screen 1 is a single large biometric button, screens 2–4 are a read-only illustrative dashboard, screens 5–7 show the progressive unlocking of real data entry triggered by user-initiated actions; no digital tools used, total build time under 3 hours",
+        "Create a Figma clickthrough prototype (low fidelity, greyscale, no visual polish) of the account-type selection screen for Diane, with two variants: Variant A shows account types as a list with no explanation, Variant B shows the same list where each account type has a one-tap inline explainer with a plain-English summary and a 'which one is right for me?' quiz of two questions — prototype is shareable via link with no installation required",
+        "Simulate Roy Tanner's session persistence scenario using a Wizard of Oz method: a researcher pre-loads a partially completed onboarding state on a test device, Roy begins the session, 'steps away' for 15 minutes (leaves the room), returns to find a push notification on the lock screen reading 'Your progress is saved — tap to continue where you left off' — the researcher has manually preserved the state; no code written"
+      ],
+      "insights": "The lowest-fidelity prototype that tests the most critical assumption is the 7-screen paper prototype of Value-First Deferred Onboarding. The core assumption it tests is that users — specifically Marcus Chen and Diane Kowalski — will find more value in seeing a demonstrative dashboard before providing personal data than they will feel anxiety about the absence of a traditional 'secure setup first' flow. If Marcus does not engage with the illustrative dashboard and immediately asks 'where do I put my real account details', the deferred model fails for him. If Diane feels uncertain or unprotected by skipping upfront verification, the model fails for her. Both failure modes are detectable in a paper prototype session without a single line of code. For Roy, the Wizard of Oz session persistence test is the minimum viable artefact — it requires no backend, no notification infrastructure, and no polished UI, yet it directly tests whether the emotional experience of returning to a saved session reduces his anxiety and restores his willingness to continue.",
+      "outputs": [
+        "7-screen paper prototype of the Value-First Deferred Onboarding flow — photographed and annotated with the assumption each screen is testing, packaged as a PDF for async review by the product team",
+        "Figma clickthrough prototype (two variants, 5 screens each) of the Diane-targeted account-type selection screen, with a linked observation sheet for the test facilitator containing specific prompts: 'At what point does Diane reach for the inline explainer?', 'Does she complete the 'which one is right for me?' quiz or skip it?', 'What does she say aloud when she sees the account type list for the first time?'"
+      ]
+    },
+    {
+      "phase_name": "Test",
+      "key_questions": [
+        "When Marcus Chen encounters the illustrative dashboard in the Value-First prototype, does he interpret it as a respectful preview of value or as a deceptive delay before real setup — and how quickly does that interpretation form?",
+        "Does Diane Kowalski's comprehension of the difference between a savings account and an investment account meaningfully improve after interacting with Variant B's inline explainer — and does that comprehension translate into confident selection or continued hesitation?",
+        "When Roy Tanner returns after a 15-minute absence and sees the 'Your progress is saved' notification, does his body language and verbalisation indicate relief and renewed confidence — or does he distrust the saved state and want to start over anyway?"
+      ],
+      "activities": [
+        "Moderated usability test with Diane Kowalski: facilitator presents both Figma variants back-to-back in counterbalanced order; Diane completes a think-aloud protocol, and the facilitator records: time-to-selection on the account-type screen, number of taps on inline explainers, confidence rating (1–5 Likert) after selection, and unprompted verbalisation of jargon terms — session is 45 minutes, recorded with consent",
+        "Unmoderated speed test with Marcus Chen: he is given the paper prototype link (photographed and uploaded to Marvel or InVision) and a single instruction — 'get to the investment features as fast as possible'; facilitator records time-to-first-investment-screen, number of screens skipped, and asks one post-task question: 'At any point did you feel the app was wasting your time? If yes, at which screen?' — session is under 15 minutes with no facilitator present",
+        "Wizard of Oz session-persistence test with Roy Tanner: conducted in a home setting with a researcher present but silent; Roy begins onboarding on a test device, is asked to 'go find your bank details' (researcher hands him a prop paper statement in another room), returns after 15 minutes; researcher records: whether Roy notices the notification unprompted, latency before he taps it, first words he speaks, and whether he successfully resumes without restarting — success is defined as task completion within 5 minutes of return without requesting help"
+      ],
+      "insights": "Testing must be conducted with all three personas because the proposed solutions make divergent bets on each of them and a failure mode for one persona may be invisible if only one persona is tested. The critical success metric for Marcus Chen is time-to-first-investment-feature — if the Value-First dashboard adds more than 45 seconds to that journey compared to a traditional flow, the deferred model needs a hard 'skip to setup' escape hatch designed specifically for his persona. For Diane Kowalski, the success metric is not speed but confident comprehension — she should be able to explain, in her own words, the difference between the two account types after seeing Variant B, without referencing the explainer text verbatim; if she cannot, the explainer content has not achieved plain-language transfer. For Roy Tanner, success is binary and behavioural: does he resume the saved session without abandoning, and does he complete bank account linking within the same session after returning? Any result where Roy restarts from the beginning or asks 'did I lose everything?' is a failure state requiring immediate design intervention in the session persistence notification copy and visual design.",
+      "outputs": [
+        "Usability test report with per-persona findings sections — each section includes: task completion rate, key observed friction moments with screen-level specificity, direct quotes, and a red/amber/green verdict on whether the prototype assumption for that persona was validated or invalidated",
+        "Prioritised iteration backlog of 10 specific design changes ranked by persona impact and implementation effort — top three items named: (1) Add a persistent 'skip to manual setup' button on the illustrative dashboard for Marcus Chen, visible from screen 2; (2) Replace the account-type list labels in Diane's flow with outcome-oriented plain-English names ('Save for retirement' instead of 'Investment Account') before any inline explainer is needed; (3) Extend Roy's session timeout to 72 hours with device-local state preservation and redesign the resume notification to display his first name and the exact step he left on"
+      ]
+    }
+  ]
+}

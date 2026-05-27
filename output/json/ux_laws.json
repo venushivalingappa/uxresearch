@@ -1,0 +1,88 @@
+{
+  "laws": [
+    {
+      "law_name": "Fitts' Law",
+      "definition": "The time to acquire a target is a function of the distance to and size of the target.",
+      "application": "During fintech onboarding, primary CTAs like 'Continue', 'Verify Identity', and 'Link Bank Account' must be large, thumb-reachable buttons placed at the bottom of the screen within the natural thumb arc. Small touch targets for agreeing to Terms & Conditions or tapping KYC document upload icons will cause friction and drop-off at critical conversion points. Error correction actions like 'Resend OTP' or 'Re-enter PIN' must also be adequately sized to reduce frustration during high-stakes moments.",
+      "implication": "Make all primary onboarding action buttons at least 48x48dp, full-width where possible, and anchored to the bottom safe zone; never place critical actions like 'Agree & Continue' in the top half of the screen on mobile.",
+      "priority": "high"
+    },
+    {
+      "law_name": "Hick's Law",
+      "definition": "The time to make a decision increases with the number and complexity of choices available.",
+      "application": "At the account setup stage, presenting users with multiple account types, investment options, or KYC verification methods simultaneously will paralyze new users who are already anxious about sharing financial data. Asking users to choose between linking a bank via net banking, UPI, IFSC, or card number all at once creates decision fatigue at a trust-critical moment. Each onboarding screen should present one primary path forward, with alternatives tucked behind a secondary option.",
+      "implication": "Limit each onboarding step to a single decision or input task; default to the most commonly used verification method (e.g., mobile OTP) and surface alternatives like email verification only as a fallback link.",
+      "priority": "high"
+    },
+    {
+      "law_name": "Miller's Law",
+      "definition": "The average person can hold approximately 7 (plus or minus 2) items in working memory at one time.",
+      "application": "Onboarding steps that require users to recall or enter long account numbers, IFSC codes, or policy reference numbers exceed working memory limits, especially when users must switch between apps to copy this data. Progress indicators showing more than 7 onboarding stages will feel overwhelming and reduce perceived completion likelihood. Grouping required documents into logical clusters — 'Identity', 'Address', 'Financial' — respects chunking principles and reduces cognitive overload.",
+      "implication": "Chunk the onboarding flow into no more than 5 named stages shown in a progress bar, and pre-fill or auto-detect data (e.g., bank name from IFSC prefix) to minimize manual recall burdens.",
+      "priority": "high"
+    },
+    {
+      "law_name": "Jakob's Law",
+      "definition": "Users spend most of their time on other apps and expect your app to work the same way those apps do.",
+      "application": "Fintech users arrive with mental models from apps like Paytm, Groww, or Revolut, expecting OTP-based phone verification as the first onboarding step, not email registration. Deviating from the pattern of phone number → OTP → profile setup will cause confusion and abandonment. UI patterns like swipe-to-confirm for transactions, face ID prompts after signup, and card-style account summaries are established conventions users expect to carry over.",
+      "implication": "Mirror the onboarding sequence convention of phone verification → OTP → minimal profile → KYC, and use standard platform components (native date pickers, OS-level biometric prompts) rather than custom-built equivalents.",
+      "priority": "high"
+    },
+    {
+      "law_name": "Law of Proximity",
+      "definition": "Objects that are near each other are perceived as a group and assumed to be related.",
+      "application": "On the KYC document upload screen, placing the upload button, file size limit, and accepted formats far apart will make users uncertain about what the button applies to. Form fields for 'First Name' and 'Last Name' must be visually grouped and separated clearly from 'Date of Birth' to signal they belong to different data categories. Security reassurance microcopy like 'Your data is encrypted' must be placed immediately adjacent to the field requesting PAN or SSN — not at the bottom of the screen where spatial distance breaks the association.",
+      "implication": "Place all contextual help text, format hints, and security badges within 8px of the specific input field they relate to, not in a generic footer, so users process them as part of that field's interaction.",
+      "priority": "medium"
+    },
+    {
+      "law_name": "Aesthetic-Usability Effect",
+      "definition": "Users perceive aesthetically pleasing designs as more usable and trustworthy, even when functionality is identical.",
+      "application": "In fintech onboarding, where users are asked to submit sensitive documents and link bank accounts, a polished visual design directly increases perceived trustworthiness and willingness to share data. Inconsistent typography, misaligned form fields, or generic stock icons during the KYC screens signal low legitimacy and trigger abandonment. A clean, minimal aesthetic with consistent brand color usage on verification screens reduces the subconscious alarm users feel when sharing financial credentials.",
+      "implication": "Invest in pixel-perfect visual design for the KYC and bank-linking screens specifically — these are the highest trust-risk moments — using consistent iconography, generous whitespace, and brand-aligned color to signal institutional credibility.",
+      "priority": "high"
+    },
+    {
+      "law_name": "Peak-End Rule",
+      "definition": "People judge an experience based on how they felt at its most intense moment and at its end, not the average of every step.",
+      "application": "The 'peak' in fintech onboarding is likely the KYC document submission or bank account linking — high anxiety, high effort moments that must be actively softened with reassurance, progress feedback, and clear next-step communication. The 'end' is the moment the account is activated or the first transaction is enabled, which must be celebrated with a visually rewarding success state to encode a positive final memory. A generic 'Setup Complete' text screen as the endpoint will result in a weak emotional closing that dampens overall onboarding recall.",
+      "implication": "Design a dedicated, animated success screen at onboarding completion — showing the user's name, account status, and a clear first action to take — and add reassurance copy at the document upload step to transform the anxiety peak into a moment of confident progress.",
+      "priority": "high"
+    },
+    {
+      "law_name": "Doherty Threshold",
+      "definition": "Productivity and engagement soar when a computer and its users interact at a pace of under 400ms, eliminating any need for users to wait.",
+      "application": "During onboarding, if OTP verification, bank account validation, or KYC document processing takes more than 400ms without visual feedback, users interpret the silence as an error and either tap again or abandon. Bank name auto-population from a typed IFSC code or PAN must resolve near-instantly to feel like intelligent assistance rather than a slow lookup. Loading states during ID verification that exceed a few seconds must include animated progress indicators with estimated time to prevent the user from assuming the app has crashed.",
+      "implication": "Instrument all onboarding API calls to target sub-400ms response times, and for calls that inherently take longer (e.g., KYC processing), implement skeleton screens or step-by-step processing animations with copy like 'Verifying your identity — this takes about 10 seconds' to maintain perceived responsiveness.",
+      "priority": "medium"
+    },
+    {
+      "law_name": "Postel's Law",
+      "definition": "Be liberal in what you accept from users, and conservative in what you output.",
+      "application": "During onboarding form entry, if a user types their phone number with spaces, dashes, or a country code prefix, the app should silently normalize it rather than throwing a validation error that breaks flow. For name fields, accepting mixed case, extra spaces, or non-Latin characters without error prevents drop-off from users whose legal names don't fit ASCII-only input assumptions. Dates of birth entered in any regional format (DD/MM/YYYY or MM-DD-YYYY) should be auto-interpreted, not rejected with a format error.",
+      "implication": "Build input normalization logic for all onboarding fields — phone numbers, names, dates, account numbers — so the app strips formatting noise silently before validation, and only surface an error when the core data is genuinely missing or invalid.",
+      "priority": "medium"
+    },
+    {
+      "law_name": "Progressive Disclosure",
+      "definition": "Present only the information necessary for the current task, revealing additional detail only as users need it.",
+      "application": "Asking a new user to complete full KYC, set notification preferences, choose a spending category, and set a PIN all before seeing the app's core value will cause drop-off. The onboarding flow should unlock only the minimum required data to activate the account — phone, name, basic KYC — and defer secondary configurations like nominee details, investment risk profiling, and referral codes to post-activation contextual prompts. Advanced options like 'Use a different verification method' or 'Enter details manually' should be hidden behind a low-prominence secondary link, not presented upfront.",
+      "implication": "Scope the onboarding critical path to the minimum fields legally required for account activation, and schedule all secondary personalisation (spending limits, notification preferences, linked accounts) as in-app prompts triggered by first use of the relevant feature.",
+      "priority": "high"
+    },
+    {
+      "law_name": "Tesler's Law (Conservation of Complexity)",
+      "definition": "Every application has an inherent amount of complexity that cannot be removed — it can only be shifted between the system and the user.",
+      "application": "Fintech onboarding carries unavoidable regulatory complexity: KYC laws require identity verification, AML rules require source-of-funds disclosures, and data privacy laws require consent capture. The design team cannot eliminate this complexity, but they can absorb it into the system — pre-populating fields via DigiLocker or Open Banking APIs, auto-detecting document types from uploaded images, and generating consent summaries in plain language. If the system fails to absorb this complexity, it cascades onto the user as manual data entry, legal jargon, and multi-step verification sequences.",
+      "implication": "Prioritize backend integrations with identity verification APIs (e.g., DigiLocker, Aadhaar eKYC, Plaid) that allow the system to absorb the data-collection burden, so the user experience can be reduced to confirmation steps rather than manual entry steps.",
+      "priority": "high"
+    },
+    {
+      "law_name": "Von Restorff Effect",
+      "definition": "When multiple similar objects are present, the one that differs from the rest is most likely to be remembered and noticed.",
+      "application": "On a screen listing onboarding steps or required documents, users will only notice and remember items that are visually differentiated — making the 'currently active' step or a mandatory-but-overlooked document like 'Proof of Address' visually distinct is critical to preventing incomplete submissions. A highlighted security badge or trust seal placed uniquely on the bank-linking screen — different from every other screen — will anchor user attention on the trust signal at the highest-anxiety moment. Using the same button style and color for both 'Skip' and 'Continue' on the same screen is a direct Von Restorff failure that will cause users to accidentally skip required steps.",
+      "implication": "Apply a single high-contrast accent color exclusively to the primary CTA on each onboarding screen, ensure 'Skip' or 'Do Later' options are always rendered in a lower-contrast secondary style, and visually differentiate the bank-linking screen with a distinct trust-focused layout to make it memorable as a safe interaction.",
+      "priority": "medium"
+    }
+  ]
+}

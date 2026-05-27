@@ -1,0 +1,539 @@
+{
+  "component_categories": [
+    {
+      "name": "Navigation",
+      "components": [
+        {
+          "component_name": "ProgressiveTabBar",
+          "variants": [
+            "two-tab-locked",
+            "three-tab-unlocked",
+            "full-unlocked"
+          ],
+          "usage_context": [
+            "Onboarding Flow & Profile Setup",
+            "First Use & Feature Exploration",
+            "Regular Use & Advocacy"
+          ],
+          "ux_principles_applied": [
+            "Progressive Disclosure",
+            "Zeigarnik Effect"
+          ],
+          "priority": "must-have",
+          "states": [
+            "default",
+            "active",
+            "disabled",
+            "unlocking"
+          ]
+        },
+        {
+          "component_name": "ChunkedStepIndicator",
+          "variants": [
+            "dot-stepper",
+            "segmented-bar"
+          ],
+          "usage_context": [
+            "Account Creation & Identity Verification",
+            "Onboarding Flow & Profile Setup",
+            "KYC Completion"
+          ],
+          "ux_principles_applied": [
+            "Goal Gradient Effect",
+            "Miller's Law"
+          ],
+          "priority": "must-have",
+          "states": [
+            "default",
+            "active",
+            "completed",
+            "error"
+          ]
+        },
+        {
+          "component_name": "BackNavigationHeader",
+          "variants": [
+            "back-only",
+            "back-with-exit"
+          ],
+          "usage_context": [
+            "Account Creation & Identity Verification",
+            "Onboarding Flow & Profile Setup",
+            "KYC Completion"
+          ],
+          "ux_principles_applied": [
+            "User Control and Freedom"
+          ],
+          "priority": "must-have",
+          "states": [
+            "default",
+            "disabled"
+          ]
+        },
+        {
+          "component_name": "ContextualKYCPromptBanner",
+          "variants": [
+            "bottom-sheet-trigger",
+            "inline-action-interrupt"
+          ],
+          "usage_context": [
+            "First Use & Feature Exploration",
+            "KYC Completion (Deferred Return)"
+          ],
+          "ux_principles_applied": [
+            "Peak-End Rule",
+            "Timing of Persuasion"
+          ],
+          "priority": "must-have",
+          "states": [
+            "default",
+            "dismissed",
+            "accepted"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Forms",
+      "components": [
+        {
+          "component_name": "InlineValidatedInput",
+          "variants": [
+            "text",
+            "email",
+            "phone",
+            "password",
+            "numeric"
+          ],
+          "usage_context": [
+            "Account Creation & Identity Verification",
+            "Onboarding Flow & Profile Setup",
+            "KYC Completion"
+          ],
+          "ux_principles_applied": [
+            "Inline Validation",
+            "Error Prevention",
+            "Plain Language"
+          ],
+          "priority": "must-have",
+          "states": [
+            "default",
+            "focused",
+            "valid",
+            "error",
+            "disabled"
+          ]
+        },
+        {
+          "component_name": "TrustAnchoredFieldGroup",
+          "variants": [
+            "single-trust-badge",
+            "grouped-fields-with-badge"
+          ],
+          "usage_context": [
+            "Account Creation & Identity Verification",
+            "KYC Completion"
+          ],
+          "ux_principles_applied": [
+            "Von Restorff Effect",
+            "Trust Signaling"
+          ],
+          "priority": "must-have",
+          "states": [
+            "default",
+            "active"
+          ]
+        },
+        {
+          "component_name": "DocumentUploadField",
+          "variants": [
+            "camera-capture",
+            "file-upload",
+            "liveness-check"
+          ],
+          "usage_context": [
+            "KYC Completion (Deferred Return)"
+          ],
+          "ux_principles_applied": [
+            "Affordance",
+            "Error Prevention"
+          ],
+          "priority": "must-have",
+          "states": [
+            "default",
+            "uploading",
+            "success",
+            "error",
+            "reviewing"
+          ]
+        },
+        {
+          "component_name": "PrimaryActionButton",
+          "variants": [
+            "full-width",
+            "inline",
+            "loading-state"
+          ],
+          "usage_context": [
+            "Account Creation & Identity Verification",
+            "Onboarding Flow & Profile Setup",
+            "KYC Completion"
+          ],
+          "ux_principles_applied": [
+            "Fitts's Law",
+            "Visual Hierarchy"
+          ],
+          "priority": "must-have",
+          "states": [
+            "default",
+            "hover",
+            "pressed",
+            "loading",
+            "disabled"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Feedback",
+      "components": [
+        {
+          "component_name": "SkeletonScreen",
+          "variants": [
+            "card-skeleton",
+            "list-skeleton",
+            "full-page-skeleton"
+          ],
+          "usage_context": [
+            "Download & Initial Launch",
+            "First Use & Feature Exploration"
+          ],
+          "ux_principles_applied": [
+            "Perceived Performance",
+            "Doherty Threshold"
+          ],
+          "priority": "must-have",
+          "states": [
+            "loading",
+            "transitioning-to-content"
+          ]
+        },
+        {
+          "component_name": "InlineFieldError",
+          "variants": [
+            "micro-copy-error",
+            "warning-hint"
+          ],
+          "usage_context": [
+            "Account Creation & Identity Verification",
+            "Onboarding Flow & Profile Setup",
+            "KYC Completion"
+          ],
+          "ux_principles_applied": [
+            "Error Recovery",
+            "Plain Language Principle"
+          ],
+          "priority": "must-have",
+          "states": [
+            "visible",
+            "hidden",
+            "animating-in"
+          ]
+        },
+        {
+          "component_name": "MilestoneToast",
+          "variants": [
+            "tab-unlock-celebration",
+            "kyc-success",
+            "profile-complete"
+          ],
+          "usage_context": [
+            "Onboarding Flow & Profile Setup",
+            "KYC Completion",
+            "Regular Use & Advocacy"
+          ],
+          "ux_principles_applied": [
+            "Positive Reinforcement",
+            "Peak-End Rule"
+          ],
+          "priority": "should-have",
+          "states": [
+            "entering",
+            "visible",
+            "exiting"
+          ]
+        },
+        {
+          "component_name": "SimulatedDataDisclaimer",
+          "variants": [
+            "banner",
+            "tooltip-tag"
+          ],
+          "usage_context": [
+            "First Use & Feature Exploration"
+          ],
+          "ux_principles_applied": [
+            "Transparency",
+            "Trust Calibration"
+          ],
+          "priority": "must-have",
+          "states": [
+            "default",
+            "dismissed"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Content",
+      "components": [
+        {
+          "component_name": "StaticLogoSplash",
+          "variants": [
+            "light-theme",
+            "dark-theme"
+          ],
+          "usage_context": [
+            "Download & Initial Launch"
+          ],
+          "ux_principles_applied": [
+            "Eliminate Unnecessary Animation",
+            "Perceived Performance"
+          ],
+          "priority": "must-have",
+          "states": [
+            "visible",
+            "fading-to-content"
+          ]
+        },
+        {
+          "component_name": "ValuePropositionCard",
+          "variants": [
+            "icon-headline-body",
+            "illustration-headline"
+          ],
+          "usage_context": [
+            "Awareness & Discovery",
+            "Download & Initial Launch",
+            "Onboarding Flow & Profile Setup"
+          ],
+          "ux_principles_applied": [
+            "Serial Position Effect",
+            "Emotional Design"
+          ],
+          "priority": "must-have",
+          "states": [
+            "default",
+            "active-slide"
+          ]
+        },
+        {
+          "component_name": "TrustBadge",
+          "variants": [
+            "encryption-statement",
+            "regulatory-badge"
+          ],
+          "usage_context": [
+            "Account Creation & Identity Verification",
+            "KYC Completion"
+          ],
+          "ux_principles_applied": [
+            "Von Restorff Effect",
+            "Trust Signaling"
+          ],
+          "priority": "must-have",
+          "states": [
+            "default"
+          ]
+        },
+        {
+          "component_name": "SimulatedPortfolioCard",
+          "variants": [
+            "rate-display",
+            "portfolio-summary"
+          ],
+          "usage_context": [
+            "First Use & Feature Exploration"
+          ],
+          "ux_principles_applied": [
+            "Endowment Effect",
+            "Value-First Principle"
+          ],
+          "priority": "must-have",
+          "states": [
+            "default",
+            "loading",
+            "kyc-locked-overlay"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Layout",
+      "components": [
+        {
+          "component_name": "ChunkedFormScreen",
+          "variants": [
+            "one-column",
+            "scrollable"
+          ],
+          "usage_context": [
+            "Account Creation & Identity Verification",
+            "Onboarding Flow & Profile Setup",
+            "KYC Completion"
+          ],
+          "ux_principles_applied": [
+            "Miller's Law",
+            "Chunking"
+          ],
+          "priority": "must-have",
+          "states": [
+            "default",
+            "scrolled",
+            "keyboard-raised"
+          ]
+        },
+        {
+          "component_name": "BottomSheetModal",
+          "variants": [
+            "half-sheet",
+            "full-sheet",
+            "drag-dismissible"
+          ],
+          "usage_context": [
+            "First Use & Feature Exploration",
+            "KYC Completion (Deferred Return)"
+          ],
+          "ux_principles_applied": [
+            "Progressive Disclosure",
+            "User Control"
+          ],
+          "priority": "must-have",
+          "states": [
+            "hidden",
+            "peek",
+            "expanded",
+            "dismissing"
+          ]
+        },
+        {
+          "component_name": "SafeAreaPageWrapper",
+          "variants": [
+            "with-tab-bar",
+            "without-tab-bar",
+            "modal-context"
+          ],
+          "usage_context": [
+            "Download & Initial Launch",
+            "Account Creation & Identity Verification",
+            "Regular Use & Advocacy"
+          ],
+          "ux_principles_applied": [
+            "Consistency",
+            "Platform Conventions"
+          ],
+          "priority": "must-have",
+          "states": [
+            "default",
+            "keyboard-active"
+          ]
+        },
+        {
+          "component_name": "SectionDivider",
+          "variants": [
+            "label-divider",
+            "spacer-only"
+          ],
+          "usage_context": [
+            "Onboarding Flow & Profile Setup",
+            "Account Creation & Identity Verification"
+          ],
+          "ux_principles_applied": [
+            "Visual Grouping",
+            "Gestalt Proximity"
+          ],
+          "priority": "should-have",
+          "states": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ],
+  "design_tokens": {
+    "color_roles": [
+      "primary-action",
+      "destructive",
+      "success",
+      "warning",
+      "neutral",
+      "surface",
+      "on-surface",
+      "trust-accent",
+      "simulated-data-tint"
+    ],
+    "type_scale": [
+      {
+        "name": "display",
+        "size": "32px",
+        "weight": "700",
+        "usage": "hero headings and value proposition screens"
+      },
+      {
+        "name": "heading-1",
+        "size": "24px",
+        "weight": "600",
+        "usage": "page and section titles"
+      },
+      {
+        "name": "heading-2",
+        "size": "20px",
+        "weight": "600",
+        "usage": "card titles and modal headers"
+      },
+      {
+        "name": "body",
+        "size": "16px",
+        "weight": "400",
+        "usage": "form labels and body copy"
+      },
+      {
+        "name": "body-emphasis",
+        "size": "16px",
+        "weight": "600",
+        "usage": "CTAs and key value numbers"
+      },
+      {
+        "name": "caption",
+        "size": "12px",
+        "weight": "400",
+        "usage": "inline error micro-copy and disclaimers"
+      },
+      {
+        "name": "caption-emphasis",
+        "size": "12px",
+        "weight": "600",
+        "usage": "trust badge text and field hints"
+      }
+    ],
+    "spacing": {
+      "base_unit": "8px",
+      "scale": [
+        "4px",
+        "8px",
+        "16px",
+        "24px",
+        "32px",
+        "48px",
+        "64px"
+      ]
+    },
+    "border_radius": {
+      "small": "4px",
+      "medium": "8px",
+      "large": "16px",
+      "pill": "999px"
+    }
+  },
+  "hierarchy_notes": "Onboarding and KYC screens own the critical path and receive must-have components first; progressive tab unlocking and simulated data components bridge the value-first deferred KYC strategy before transitioning users into regular-use patterns."
+}

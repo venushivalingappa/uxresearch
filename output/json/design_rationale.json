@@ -1,0 +1,76 @@
+{
+  "decisions": [
+    {
+      "decision_title": "Progressive Tab Navigation Pattern",
+      "context": "Resolves tension between exposing powerful features early and overwhelming new users with too many choices simultaneously.",
+      "options_considered": [
+        "Bottom tab bar visible from app launch always",
+        "Tabs revealed progressively as onboarding milestones complete"
+      ],
+      "chosen_approach": "Unlock navigation tabs incrementally as Marcus completes each onboarding milestone, starting with two core tabs.",
+      "rationale": "Hick's Law dictates that reducing initial choices speeds decision-making, directly addressing Marcus Chen's need for immediate directional clarity without cognitive overload.",
+      "trade_offs": "Power users like Marcus Chen may feel patronized by gated navigation, requiring clear visual affordances indicating locked tabs are temporary.",
+      "success_metric": "Time-to-first-meaningful-action under 90 seconds for 70% of new users in usability testing."
+    },
+    {
+      "decision_title": "Value-First Deferred KYC Flow",
+      "context": "Resolves the premature KYC prompt pain point by demonstrating product value before requesting sensitive personal information.",
+      "options_considered": [
+        "Collect full KYC data before any app exploration permitted",
+        "Allow read-only portfolio exploration before triggering KYC prompt"
+      ],
+      "chosen_approach": "Let users explore simulated portfolio and rate data for up to 10 minutes before surfacing a contextual KYC prompt tied to a specific action.",
+      "rationale": "Progressive Disclosure supports deferring KYC complexity until Roy Tanner has built enough precarious trust to willingly share sensitive data.",
+      "trade_offs": "Deferred KYC increases drop-off risk at the verification step for users who explore but never commit, inflating acquisition cost without conversion.",
+      "success_metric": "KYC completion rate above 60% among users who reach the deferred prompt within the first session."
+    },
+    {
+      "decision_title": "Inline Contextual Error Handling",
+      "context": "Resolves Diane's frustration with form errors appearing only after full submission, breaking her high-velocity input behavior.",
+      "options_considered": [
+        "Show all validation errors only on form submission tap",
+        "Validate each field inline immediately after user leaves focus"
+      ],
+      "chosen_approach": "Validate fields on blur with inline micro-copy that explains the fix in plain language beneath the offending field.",
+      "rationale": "Postel's Law—accepting liberal user input and responding with precise, forgiving feedback—directly supports Diane Kowalski's need for speed without punitive re-entry loops.",
+      "trade_offs": "Aggressive inline validation on fast-typing users can produce flickering error states that feel accusatory before input is complete.",
+      "success_metric": "Form error recovery rate above 85% on first correction attempt without requiring full re-entry."
+    },
+    {
+      "decision_title": "Chunked Onboarding Information Architecture",
+      "context": "Resolves the cognitive overload of presenting all account setup requirements on a single dense screen.",
+      "options_considered": [
+        "Single scrollable setup screen with all fields visible at once",
+        "Seven discrete screens each containing one to three related fields"
+      ],
+      "chosen_approach": "Group onboarding steps into chunks of no more than three related fields per screen with a persistent progress indicator.",
+      "rationale": "Miller's Law—working memory capacity of roughly seven plus or minus two items—justifies chunking to prevent Roy Tanner from abandoning setup due to perceived complexity.",
+      "trade_offs": "More screens increases total perceived length of onboarding, which risks frustrating Marcus Chen who prioritizes reaching the core product quickly.",
+      "success_metric": "Onboarding abandonment rate below 20% across all seven screens measured via funnel analytics."
+    },
+    {
+      "decision_title": "Trust-Anchored Security Disclosure UX",
+      "context": "Resolves Roy Tanner's precarious trust state by making encryption and data practices visible before he is asked to input any data.",
+      "options_considered": [
+        "Show security certifications only in Settings or footer links",
+        "Surface a single prominent trust badge and one-line security statement on the first data-entry screen"
+      ],
+      "chosen_approach": "Display a Von Restorff-isolated trust badge with a one-sentence encryption statement directly above the first personal data field.",
+      "rationale": "The Von Restorff Effect ensures the isolated trust badge is memorably distinct, directly countering Roy Tanner's precarious trust state at the highest-anxiety moment of data entry.",
+      "trade_offs": "Prominent security framing may signal to lower-anxiety users like Marcus Chen that the app is overly cautious, potentially undermining a perception of seamless modernity.",
+      "success_metric": "Trust perception score above 4.0 out of 5.0 on post-onboarding survey question about data safety confidence."
+    },
+    {
+      "decision_title": "Eliminate Branding Splash Animation",
+      "context": "Resolves the pain point of wasted interactive time caused by a mandatory branding animation before the app becomes usable.",
+      "options_considered": [
+        "Retain full 3-second branded splash animation on every cold launch",
+        "Replace splash with an instant-render skeleton screen loading real content beneath the logo"
+      ],
+      "chosen_approach": "Replace the splash animation with a static logo visible for no more than 400 milliseconds while content hydrates behind a skeleton screen.",
+      "rationale": "The Doherty Threshold—system responses under 400ms maintain user flow state—ensures Marcus Chen experiences immediate interactivity and perceives the app as fast and responsive.",
+      "trade_offs": "Removing the branded animation reduces a deliberate aesthetic moment that the Aesthetic-Usability Effect could leverage to build early emotional goodwill with Diane Kowalski.",
+      "success_metric": "Perceived load time rated as fast or very fast by at least 80% of users in post-session usability interviews."
+    }
+  ]
+}
