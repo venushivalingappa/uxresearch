@@ -63,8 +63,9 @@ def generate_all_scripts(context: dict) -> list[Path]:
         except Exception as e:
             print(f"Warning: Could not generate component sheet script: {e}")
 
-    # Generate index file
-    _write_index(generated)
+    # Only write index when scripts were actually generated
+    if generated:
+        _write_index(generated)
     return generated
 
 
