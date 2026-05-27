@@ -58,8 +58,8 @@ def write_report(problem: str, context: dict, output_path: Path) -> None:
             lines += ["", "**Relevant UX Laws:**"]
             for l_ in p.get("relevant_ux_laws", []):
                 if isinstance(l_, dict):
-                    lines.append(f"- **{l_.get('law_name','')}**: {l_.get('relevance','')}")
-                else:
+                    lines.append(f"- **{l_.get('law_name', l_.get('name',''))}**: {l_.get('relevance', l_.get('why',''))}")
+                elif isinstance(l_, str):
                     lines.append(f"- {l_}")
             lines += [""]
         lines += ["---", ""]
@@ -162,8 +162,14 @@ def write_report(problem: str, context: dict, output_path: Path) -> None:
                     "",
                 ]
         tokens = ds.get("design_tokens", {})
-        lines += ["### Design Tokens", f"**Color Roles:** {', '.join(tokens.get('color_roles', []))}",
-                  f"**Type Scale:** {', '.join(tokens.get('type_scale', []))}",
+        type_scale = tokens.get("type_scale", [])
+        type_scale_str = ", ".join(
+            t.get("name", str(t)) if isinstance(t, dict) else str(t)
+            for t in type_scale
+        )
+        lines += ["### Design Tokens",
+                  f"**Color Roles:** {', '.join(tokens.get('color_roles', []))}",
+                  f"**Type Scale:** {type_scale_str}",
                   f"**Spacing:** {tokens.get('spacing', {}).get('base_unit', '')} base unit",
                   "", "---", ""]
 

@@ -20,29 +20,24 @@ Key pain points from the journey map:
 Key design thinking outputs:
 {dt_outputs}
 
-Document 6-8 key design decisions for this product. Each decision should address a meaningful design choice
-(navigation pattern, onboarding approach, error handling strategy, information architecture, etc.)
+Document exactly 6 key design decisions. Be concise — each field max 1 sentence.
 
 Return this exact JSON structure:
 {{
   "decisions": [
     {{
-      "decision_title": "short title for this design decision",
-      "context": "what problem or tension this decision addresses",
-      "options_considered": [
-        "option A description",
-        "option B description",
-        "option C description (optional)"
-      ],
-      "chosen_approach": "the approach selected",
-      "rationale": "why this approach was chosen — must cite at least one UX law by exact name and reference at least one persona by name",
-      "trade_offs": "what is given up with this choice",
-      "success_metric": "how you would measure if this decision was correct"
+      "decision_title": "short title (5 words max)",
+      "context": "one sentence: what tension this resolves",
+      "options_considered": ["option A (10 words)", "option B (10 words)"],
+      "chosen_approach": "one sentence",
+      "rationale": "one sentence citing one UX law name and one persona name",
+      "trade_offs": "one sentence",
+      "success_metric": "one measurable metric"
     }}
   ]
 }}
 
-Make decisions varied — cover navigation, content hierarchy, onboarding, error states, feedback mechanisms, accessibility."""
+Cover: navigation pattern, onboarding flow, error handling, info architecture, trust/security UX, accessibility."""
 
 
 class DesignRationaleStage(BaseStage):

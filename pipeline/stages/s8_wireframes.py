@@ -1,34 +1,29 @@
 import json
 from pipeline.base_stage import BaseStage
 
-SYSTEM = """You are a UX designer creating low-fidelity wireframe specifications.
-Your wireframes are black-and-white, component-based, and described in enough detail that a developer could build them.
-Every screen derives from the user journey map and uses components from the design system.
+SYSTEM = """You are a UX designer creating concise low-fidelity wireframe specifications.
+Be extremely brief — short field values only. No prose descriptions.
 Respond ONLY with valid JSON. No markdown fences, no explanation."""
 
 USER_TEMPLATE = """Problem Statement: {problem}
 
-Journey stages (derive your screen list from these):
-{journey_stages}
+Journey stages: {journey_stages}
+Components available: {component_names}
 
-Available components (use these by exact name):
-{component_names}
-
-Create low-fidelity wireframe specifications for the key screens of this product.
-Aim for 5-8 screens covering the primary user flow.
+Create exactly 5 screens for the primary onboarding flow.
+Keep ALL field values short (under 10 words each).
 
 Return this exact JSON structure:
 {{
   "screens": [
     {{
-      "screen_name": "descriptive screen name",
-      "screen_purpose": "one sentence on what user task this screen enables",
-      "journey_stage": "which journey stage this screen belongs to",
-      "layout_type": "single-column | split | modal | tab-bar | list | grid | form",
-      "dimensions": {{"width": 375, "height": 812, "platform": "mobile-ios"}},
+      "screen_name": "name (3 words max)",
+      "purpose": "one short sentence",
+      "journey_stage": "stage name",
+      "layout_type": "single-column | form | modal | tab-bar",
       "regions": [
         {{
-          "region_name": "status-bar | nav-header | content | tab-bar | modal-overlay | bottom-sheet",
+          "region_name": "nav-header | content | tab-bar",
           "height_px": number,
           "background": "white | light-gray | dark",
           "contents": [
@@ -37,32 +32,22 @@ Return this exact JSON structure:
               "label": "visible text or placeholder label",
               "width": "full | half | third | auto | Npx",
               "height": "Npx or auto",
-              "style": "filled | outlined | ghost | text-only",
-              "position": "description of position within region"
+              "style": "filled | outlined | text-only",
+              "position": "top | center | bottom"
             }}
           ]
         }}
       ],
-      "components_used": ["component names from design system"],
+      "components_used": ["component name"],
       "interactions": [
-        {{
-          "trigger": "element that triggers the interaction",
-          "action": "what happens",
-          "destination": "resulting screen or state"
-        }}
+        {{"trigger": "element", "action": "navigate", "destination": "screen name"}}
       ],
-      "annotations": [
-        "accessibility note or design clarification"
-      ],
-      "wireframe_description": "detailed prose description of the complete screen layout — describe every visible element, their relative sizes, vertical stacking order, and placeholder content. Write as if narrating to someone who cannot see the screen."
+      "annotations": ["one short note"],
+      "wireframe_description": "2 sentences max describing layout"
     }}
   ],
   "flow_connections": [
-    {{
-      "from_screen": "screen name",
-      "to_screen": "screen name",
-      "trigger": "what causes navigation"
-    }}
+    {{"from_screen": "screen A", "to_screen": "screen B", "trigger": "tap CTA"}}
   ]
 }}"""
 
